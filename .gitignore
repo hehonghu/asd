@@ -1,16 +1,21 @@
 
 # 忽略 node_modules 文件
 node_modules
-# 忽略所有以 .a 结尾的文件
-*.a
-# 但否定忽略 lib.a, 尽管已经在前面忽略了 .a 文件
-!lib.a
+# 忽略所有以 .txt 结尾的文件
+*.txt
+# 但否定忽略 每个文件夹下的 hehonghui.txt, 尽管已经在前面忽略了 .txt 文件
+!**/hehonghui.txt
+# 但否定忽略根目录的子目录以及多重子目录中的hehonghui2.txt，但是保留根目录的hehonghui2.txt
+!*/hehonghui2.txt
 # 仅在当前目录下忽略 dist文件
 /dist
-# 忽略 bulid/ 文件夹下的所有文件
-bulid/
-# 忽略 .txt结尾的文件
-*.txt
-# 否定忽略当前目录下的.txt文件
-! /hehonghui.txt
-
+# 仅在当前目录下否定忽略何鸿辉.txt
+!hehonghui3.txt
+# 忽略 bulid/ 文件夹下的所有文件，即是build文件夹里面有否定忽略的文件也没用
+build/
+# 忽略根目录下a和任意一个字符的组合的txt文件
+/a?.c
+# 忽略根目录下b和任意一个字符串组合的txt文件
+/b*.c
+# 忽略根目录下c和a或b组合的txt文件
+/c[ab].c
